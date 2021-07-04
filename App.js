@@ -1,46 +1,46 @@
-import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 
-export default class SwiperComponent extends Component {
-  render() {
+const SwiperComponent = () => {
     return(
-      <Swiper style={styles.wrapper} showsButtons={true}>
-        <View style={styles.slide1}>
-          <Text styles={styles.text}>hi</Text>
+        <View style={styles.container}>
+          <Swiper pagingEnabled={true}>
+            <View style={styles.slide1}>
+              <Text style={styles.text}>Hi</Text>
+            </View>
+            <View style={styles.slide2}>
+              <Text style={styles.text}>I'm</Text>
+            </View>
+            <View style={styles.slide3}>
+              <Text style={styles.text}>HYJ</Text>
+            </View>
+          </Swiper>
         </View>
-        <View style={styles.slide2}>
-          <Text styles={styles.text}>im</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text styles={styles.text}>yoonji</Text>
-        </View>
-      </Swiper>
-    )
-  }
-}
+    );
+  };
 
 const styles = StyleSheet.create({
-  wrapper: {
-
+  container: {
+    flex: 1,
   },
   slide1: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#81d4fa'
   },
   slide2: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f8bbd0'
   },
   slide3: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ce93d8'
   },
   text: {
     color: 'black',
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   }
 })
 
-AppRegistry.registerComponent('swiper', () => SwiperComponent)
+export default SwiperComponent;
